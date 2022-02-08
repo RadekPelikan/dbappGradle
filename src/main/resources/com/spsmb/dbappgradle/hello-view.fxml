@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spsmb.dbappgradle.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spsmb.dbappgradle.HelloController">
     <children>
-      <ImageView fitHeight="357.0" fitWidth="471.0" layoutX="7.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="268.0" fitWidth="456.0" layoutX="363.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img.jpg" />
-         </image>
-      </ImageView>
-        <VBox layoutX="250.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+        <VBox layoutX="27.0" layoutY="28.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
             <children>
-                <TextField fx:id="input" alignment="TOP_LEFT" prefHeight="75.0" prefWidth="100.0" />
-                <Button mnemonicParsing="false" onAction="#click" prefHeight="26.0" prefWidth="122.0" text="Printni" />
+                <TextField fx:id="insertField" alignment="TOP_LEFT" onKeyPressed="#enter" prefHeight="3.0" prefWidth="100.0" promptText="insert" />
+                <Button fx:id="insertButton" mnemonicParsing="false" onAction="#clickInsert" prefHeight="26.0" prefWidth="122.0" text="INSERT" />
             </children>
         </VBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" layoutX="129.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Label layoutX="154.0" layoutY="36.0" prefHeight="50.0" prefWidth="150.0" text="Nečum">
-         <font>
-            <Font name="Roboto Light" size="36.0" />
-         </font></Label>
+      <VBox layoutX="138.0" layoutY="28.0" prefHeight="252.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Label fx:id="selectLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="100.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="selectButton" mnemonicParsing="false" onAction="#clickSelect" prefHeight="26.0" prefWidth="122.0" text="SELECT" />
+            <ListView fx:id="selectList" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="selectAllButton" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#clickSelectAll" prefHeight="26.0" prefWidth="122.0" text="SEELECT ALL" />
+         </children>
+      </VBox>
+      <VBox layoutX="251.0" layoutY="28.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <TextField fx:id="idField" alignment="TOP_LEFT" onKeyPressed="#enter" prefHeight="3.0" prefWidth="100.0" promptText="id: last" />
+            <TextField fx:id="nameField" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" onKeyPressed="#enter" prefHeight="3.0" prefWidth="100.0" promptText="name" />
+         </children>
+      </VBox>
+      <VBox layoutX="370.0" layoutY="28.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDelete" prefHeight="26.0" prefWidth="122.0" text="DELETE" />
+            <Button fx:id="updateButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickUpdate" prefHeight="26.0" prefWidth="122.0" text="UPDATE" />
+         </children>
+      </VBox>
     </children>
 </AnchorPane>
